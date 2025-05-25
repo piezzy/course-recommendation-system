@@ -30,7 +30,7 @@ def cosinesimat(cvmat):
 
 def readdata():
     
-    df = pd.read_csv('UdemyCleanedTitle.csv')
+    df = pd.read_csv('udemy_cleaned.csv')
     return df
 
 def recommend_course(df, title, cosine_mat, numrec):
@@ -91,7 +91,7 @@ def hello_world():
             cvmat = getcosinemat(df)
 
             num_rec = 6
-            cosine_mat = cosinesimmat(cvmat)
+            cosine_mat = cosinesimat(cvmat)
 
             recdf = recommend_course(df, titlename,
                                      cosine_mat, num_rec)

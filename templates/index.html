@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Course Recommendation | Home</title>
+    
+    <style>
+        body {
+            background-color: #f0f4f8; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        .compact-nav {
+            padding: 0.5rem 0; 
+            background-color: #b3e5fc; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+            max-width: 1140px; 
+            margin: 1.5rem auto; 
+            border-radius: 10px; 
+        }
+        .compact-nav .navbar-brand {
+            color: #0277bd !important; 
+            font-weight: 500;
+        }
+        .compact-nav .nav-link {
+            color: #039be5 !important; 
+            font-weight: 500;
+        }
+        .compact-nav .nav-link.active, 
+        .compact-nav .nav-link:hover {
+            color: #01579b !important; 
+        }
+        
+        .compact-jumbotron {
+            padding: 2.5rem 0; 
+            background-color: #e1f5fe; 
+            max-width: 1140px;         
+            margin-left: auto;         
+            margin-right: auto;        
+            margin-top: 2.5rem;        
+            margin-bottom: 2.5rem;     
+            border-radius: 15px;       
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06); 
+        }
+        .page-title {
+            color: #0277bd; 
+            font-weight: 300;
+            margin-bottom: 1.5rem; 
+        }
+        .highlight-course {
+            color: #ff7043; 
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+        .form-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem; 
+            background: #ffffff; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+        }
+        .form-section .input-group-append .btn-primary {
+            background-color: #4fc3f7; 
+            border-color: #4fc3f7;
+            color: white;
+            font-weight: 500; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            transition: all 0.3s ease; 
+        }
+        .form-section .input-group-append .btn-primary:hover {
+            background-color: #29b6f6; 
+            border-color: #29b6f6;
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+        }
+        .form-control-lg { 
+            border-color: #b3e5fc;
+        }
+        .form-control-lg:focus {
+            border-color: #4fc3f7;
+            box-shadow: 0 0 0 0.2rem rgba(79, 195, 247, 0.25);
+        }
+        
+        .compact-album {
+            padding: 2.5rem 0; 
+            background-color: #ffffff; 
+            max-width: 1140px; 
+            margin: 2.5rem auto; 
+            border-radius: 15px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.07); 
+        }
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem; 
+        }
+        .course-card {
+            transition: transform 0.2s ease-in-out;
+            border: none;
+            border-radius: 12px; 
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07); 
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+        }
+        .course-card-body {
+            padding: 1.5rem; 
+            background: linear-gradient(135deg, #81d4fa 0%, #4fc3f7 100%); 
+        }
+        .course-card-body .card-text { 
+            color: #01579b; 
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            font-weight: 500; 
+        }
+        
+        .btn-custom {
+            padding: 0.5rem 1.5rem; 
+            border-radius: 25px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border-width: 2px; 
+            border-style: solid;
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        
+        .course-card-body .btn-custom {
+            border-color: #ffffff; 
+            color: #ffffff; 
+            background-color: transparent;
+        }
+        .course-card-body .btn-custom:hover {
+            background-color: #ffffff;
+            color: #0288d1; 
+            border-color: #ffffff;
+        }
+        
+        .error-card {
+            max-width: 600px;
+            margin: 2.5rem auto; 
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            background-color: #fff3e0; 
+            padding: 1rem; 
+        }
+        .error-card .card-title { 
+            color: #e65100; 
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        .error-card .card-text {
+            color: #bf360c; 
+            font-size: 0.95rem;
+        }
+        .error-card .btn-custom {
+            border-color: #ff8a65; 
+            color: #ff8a65; 
+            background-color: transparent;
+        }
+        .error-card .btn-custom:hover {
+            background-color: #ff8a65;
+            color: #ffffff;
+            border-color: #ff8a65;
+        }
+        
+        @media (max-width: 1200px) {
+            .compact-nav, .compact-album {
+                max-width: 95%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .form-section {
+                margin: 0 1rem;
+                padding: 1.5rem; 
+            }
+            .course-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem; 
+            }
+            .compact-nav, .compact-album {
+                 margin-left: 1rem;
+                 margin-right: 1rem;
+                 max-width: calc(100% - 2rem);
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light compact-nav">
+        <div class="container"> <a class="navbar-brand" href="/">Udemy Course Recommendation System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main role="main">
+        <section class="compact-jumbotron text-center"> <div class="container">
+                <h3 class="page-title">Find Your Perfect Course</h3>
+                
+                <div class="form-section">
+                    <form action="/" method="POST">
+                        <div class="input-group mb-3">
+                            <input name="course" type="text" class="form-control form-control-lg" id="course" placeholder="Enter course name..." style="border-radius: 25px 0 0 25px;">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary btn-lg" style="border-radius: 0 25px 25px 0; padding: 0 2rem;">
+                                    <strong>Recommend</strong>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                {% if showtitle%} 
+                <div class="mt-4">
+                    <h4 class="page-title">Recommendations for <span class="highlight-course">"{{coursename}}"</span></h4>
+                </div>
+                {%endif%}
+            </div>
+        </section>
+
+        <div class="compact-album"> <div class="container">
+                {%if showerror%}
+                <div class="error-card card text-center">
+                    <div class="card-body p-4">
+                        <h5 class="card-title mb-3">Course Not Found</h5>
+                        <p class="card-text">Sorry! The course "{{coursename}}" is not available currently. We'll report it to the Course Administrator for uploading.</p>
+                        <a href="/" class="btn btn-outline-primary btn-custom mt-3">Back to Home</a>
+                    </div>
+                </div>
+                {%endif%}
+
+                <div class="course-grid">
+                    {%for course in coursemap%}
+                    <div class="course-card card">
+                        <div class="course-card-body">
+                            <p class="card-text mb-3" style="min-height: 60px; display: flex; align-items: center;">{{course}}</p>
+                            <div class="text-center">
+                                <a href="{{coursemap[course]}}" target="_blank" class="btn btn-outline-light btn-custom">
+                                    View Course
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
